@@ -1,4 +1,5 @@
 # Extending the Lab Example with Training-API
+ja
 
 sudo docker build -t indikakuma/training-api:0.0.1 .
 
