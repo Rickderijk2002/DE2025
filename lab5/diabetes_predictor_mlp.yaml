@@ -55,7 +55,7 @@ deploymentSpec:
         command:
         - python3
         - /pipelines/component/src/component.py
-        image: us-central1-docker.pkg.dev/YOUR_PROJECT_ID/labrepo/dataingestor:0.0.1
+        image: us-central1-docker.pkg.dev/de2025-471807/labrepo/dataingestor:0.0.1
     exec-mlp-training:
       container:
         args:
@@ -70,7 +70,7 @@ deploymentSpec:
         command:
         - python3
         - /pipelines/component/src/component.py
-        image: us-central1-docker.pkg.dev/YOUR_PROJECT_ID/labrepo/mlptrainer:0.0.1
+        image: us-central1-docker.pkg.dev/de2025-471807/labrepo/mlptrainer:0.0.1
 pipelineInfo:
   name: diabetes-predictor-mlp
 root:
