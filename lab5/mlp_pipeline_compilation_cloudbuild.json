@@ -1,0 +1,28 @@
+{
+  "steps": [
+    {
+      "name": "python:3.12.7",
+      "entrypoint": "/bin/sh",
+      "args": [
+        "-c",
+        "cd ./lab5/pipeline && python -m venv .myenv && . .myenv/bin/activate && python -m pip install --upgrade pip && python -m pip install -r requirements.txt && python mlp_pipeline.py"
+      ],
+      "id": "compile-pipeline"
+    },
+    {
+      "name": "gcr.io/cloud-builders/gsutil",
+      "args": [
+        "cp",
+        "./lab5/pipeline/diabetes_predictor_mlp.yaml",
+        "gs://${_CONF_REPO}"
+      ],
+      "waitFor": [
+        "compile-pipeline"
+      ],
+      "id": "upload-pipeline"
+    }
+  ],
+  "options": {
+    "logging": "CLOUD_LOGGING_ONLY"
+  }
+}
