@@ -56,11 +56,11 @@ def compile_pipeline():
 
 def run_pipeline():
     # The Google Cloud project that this pipeline runs in.
-    PROJECT_ID = "your project id"
+    PROJECT_ID = "de2025-471807"
     # The region that this pipeline runs in
     REGION = "us-central1"
     # Specify a Cloud Storage URI that your pipelines service account can access. The artifacts of your pipeline runs are stored within the pipeline root.
-    PIPELINE_ROOT = "gs://your temp bucket name"
+    PIPELINE_ROOT = "gs://temp_de_2025"
 
     # Before initializing, make sure to set the GOOGLE_APPLICATION_CREDENTIALS
     # environment variable to the path of your service account.
@@ -76,9 +76,9 @@ def run_pipeline():
         pipeline_root=PIPELINE_ROOT,
         parameter_values={
             'project_id': PROJECT_ID,
-            'data_bucket': 'data_de2025',  # makesure to use your data bucket name
+            'data_bucket': 'data_de_2025',  # makesure to use your data bucket name
             'trainset_filename': 'training_set.csv',
-            'model_repo': 'models_de2025'  # makesure to use your model bucket name
+            'model_repo': 'models_de2024'  # makesure to use your model bucket name
         }
     )
 
