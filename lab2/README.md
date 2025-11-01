@@ -150,6 +150,8 @@ sudo docker network prune
 
 sudo docker volume prune
 
+sudo docker volume rm $(sudo docker volume ls -qf dangling=true)
+
 # Remove all images
 
 sudo docker rmi -f $(sudo docker images -aq)
