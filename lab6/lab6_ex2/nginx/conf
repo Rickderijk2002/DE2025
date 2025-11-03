@@ -1,0 +1,8 @@
+server {
+    listen       8080;
+    server_name  "";
+    location / {
+        proxy_pass   http://diabetes-app:5000;
+    }
+
+}

@@ -1,0 +1,15 @@
+##Here, create the docker compose file
+
+##Useful Docker Compose Commands 
+
+sudo docker compose build 
+sudo docker compose up -d
+sudo docker-compose down 
+sudo docker logs spark-driver-app
+sudo docker compose stop
+sudo docker compose start
+sudo docker compose restart
+sudo docker compose down
+sudo docker compose rm
+sudo docker compose logs
+sudo docker compose down -v --rmi all
