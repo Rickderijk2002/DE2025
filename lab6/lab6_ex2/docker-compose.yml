@@ -1,0 +1,16 @@
+services:
+  nginx-proxy:
+    build: nginx
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - diabetes-app
+  diabetes-app:
+    build: prediction-ui-embedded
+    container_name: diabetes-app
+    restart: always
+    ports: 
+      - '8000:8000'
+    command: gunicorn -w 3 -t 60 -b 0.0.0.0:5000 app:app
