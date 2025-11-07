@@ -1,0 +1,15 @@
+{
+  "steps": [   
+    {
+      "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+      "entrypoint": "/bin/sh",
+      "args": [
+        "-c",
+        "gcloud dataproc jobs submit pyspark gs://${_DATA_REPO}/dataproc_example.py --region ${_C_REGION} --cluster ${_C_NAME} --properties spark.jars.packages=org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.3"
+      ]
+    }
+  ],
+  "options": {
+    "logging": "CLOUD_LOGGING_ONLY"
+  }
+}
