@@ -13,7 +13,7 @@ RUN  apt-get update -y && apt-get install -y python3-wheel
 # Copy requirements.txt  to the working directory
 COPY requirements.txt .
 # Install required python packages
-RUN pip install --no-cache-dir -r requirements.txt
+RUN python3.11 -m pip install --no-cache-dir -r requirements.txt
 
 # Update the Guava library needed by the GCS connector
 RUN mv /opt/spark/jars/guava-14.0.1.jar /opt/spark/jars/guava-14.0.1.jar.bk
