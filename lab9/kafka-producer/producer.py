@@ -21,7 +21,7 @@ def kafka_python_producer_async(producer, msg, topic):
 
 
 if __name__ == '__main__':
-    producer = KafkaProducer(bootstrap_servers='34.72.133.247:9092')  # use your VM's external IP Here!
+    producer = KafkaProducer(bootstrap_servers='34.27.168.47:9092')  # use your VM's external IP Here!
     with open('C:\\teaching\\DE2025\\lab9\\data\\wordstream.txt') as f:   # change this path to the path in your laptop
         lines = f.readlines()
 
